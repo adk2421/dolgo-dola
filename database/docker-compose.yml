@@ -1,0 +1,13 @@
+services:
+  db:
+    build: .
+    container_name: dolgodola
+    ports:
+      - "5432:5432"
+    env_file:
+      - database.env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
