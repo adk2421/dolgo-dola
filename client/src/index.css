@@ -2,7 +2,12 @@
 
 @font-face {
 	font-family: 'Pretendard';
-	src: url('./assets/fonts/PretendardVariable.woff2') format('woff2');
+	src: url('./assets/fonts/pretendard/PretendardVariable.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: 'Roboto';
+	src: url('./assets/fonts/roboto/Roboto-VariableFont.ttf') format('truetype');
 }
 
 :root {
@@ -18,9 +23,9 @@
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px; */
 
-  --font-sans: 'Pretendard', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Pretendard', system-ui, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'Pretendard', ui-monospace, Consolas, monospace;
+  --font-sans: 'Pretendard', 'Roboto', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Pretendard', 'Roboto', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Pretendard', 'Roboto', ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--font-sans);
   /* letter-spacing: 0.18px;
