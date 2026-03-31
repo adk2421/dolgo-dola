@@ -15,7 +15,9 @@ import com.dolgodola.main.entity.UserEntity;
 import com.dolgodola.main.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.log4j.Log4j2;
 
+@Log4j2
 @Service
 @RequiredArgsConstructor
 public class CustomOAuth2UserService extends DefaultOAuth2UserService {
@@ -24,6 +26,7 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
 	@Override
 	public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+
 		// 1. 기본 설정으로 유저 정보를 가져옴
 		OAuth2User oAuth2User = super.loadUser(userRequest);
 
@@ -31,12 +34,10 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 		String registrationId = userRequest.getClientRegistration().getRegistrationId();
 
 		// 3. OAuth2 로그인 진행 시 키가 되는 필드값 (Primary Key 역할)
-		String userNameAttributeName = userRequest.getClientRegistration()
-				.getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
+		String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
 
 		// 4. 추출한 attributes를 가공
-		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName,
-				oAuth2User.getAttributes());
+		OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
 		// 5. 유저 정보 저장 및 업데이트 (Dirty Checking 활용)
 		UserEntity user = saveOrUpdate(attributes);
@@ -55,4 +56,5 @@ public class CustomOAuth2UserService extends DefaultOAuth2UserService {
 
 		return userRepository.save(user);
 	}
+	
 }
