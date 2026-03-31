@@ -17,7 +17,7 @@ const Header = ({ siteInfo, currentLang, onLangChange }) => (
 				<ul className="hidden lg:flex space-x-10 text-xs font-bold uppercase tracking-widest text-neutral-700">
 					{headerConfig.nav.menu.map((menu) => {
 						return (
-							<li><a href="#" key={menu[currentLang]} className={`hover:text-black transition ${menu.style}`}>{menu[currentLang]}</a></li>
+							<li key={menu[currentLang]}><a href="#" className={`hover:text-black transition ${menu.style}`}>{menu[currentLang]}</a></li>
 					)})}
 				</ul>
 			</div>

@@ -3,7 +3,7 @@ const Footer = ({ siteInfo }) => (
     <div className="max-w-[1920px] mx-auto px-6 lg:px-12 grid md:grid-cols-2 gap-12">
       <div>
         <span className="text-3xl md:text-4xl font-black text-white italic">{siteInfo.title}</span>
-        <p className="mt-6 text-neutral-400 text-sm max-w-xs">Curated minimal essentials for the modern urban dweller.</p>
+        <p className="mt-2 text-neutral-400 text-xs md:text-sm max-w-xs">© 2026 DOLGO-DOLA. All rights reserved.</p>
       </div>
       
       <div className="grid grid-cols-2 gap-8 text-sm">
@@ -22,9 +22,9 @@ const Footer = ({ siteInfo }) => (
         </div>
       </div>
     </div>
-		<div className="max-w-[1920px] mx-auto px-6 lg:px-12 mt-16 pt-8 border-t border-neutral-800 text-center text-xs text-neutral-600 font-mono">
+		{/* <div className="max-w-[1920px] mx-auto px-6 lg:px-12 mt-16 pt-8 border-t border-neutral-800 text-center text-xs text-neutral-600 font-mono">
 			© 2026 {siteInfo.title}. All rights reserved.
-		</div>
+		</div> */}
   </footer>
 );
 
